@@ -1,8 +1,6 @@
 # crypto-g-bff
 
-BFF service consisting of serverles functions created with [vercel](https://vercel.com/docs/serverless-functions/introduction)
-
-The functions consume and expose data from [coinbase](https://www.coinapi.io/).
+BFF service consisting of serverles functions created with [vercel](https://vercel.com/docs/serverless-functions/introduction). The functions consume and expose data from [coinbase](https://www.coinapi.io/).
 
 <br/>
 
