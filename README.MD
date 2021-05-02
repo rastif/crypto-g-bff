@@ -8,8 +8,6 @@ The functions consume and expose data from [coinbase](https://www.coinapi.io/).
 
 ## Prerequisite
 
-#
-
 Developing and starting repo locally requires following tools and keys:
 
 [vercel cli](https://vercel.com/cli)
@@ -19,8 +17,6 @@ Developing and starting repo locally requires following tools and keys:
 <br/>
 
 ## Start repo locally
-
-#
 
 ```
 yarn
