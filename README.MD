@@ -19,3 +19,11 @@ yarn
 
 vercel dev
 ```
+
+<br/>
+
+<br/>
+
+### TODO
+
+- [] change api towards coinbase v2
