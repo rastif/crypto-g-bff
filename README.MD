@@ -26,4 +26,4 @@ vercel dev
 
 ### TODO
 
-- [] change api towards coinbase v2
+- [] change api towards coinbase [v2](https://developers.coinbase.com/api/v2)
