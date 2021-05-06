@@ -4,17 +4,22 @@ import config from "../../src/config";
 import allowCors from "../../src/middlewares/allowCors";
 
 axios.defaults.baseURL = config.API_BASE;
-axios.defaults.headers.common["X-CoinAPI-Key"] = config.API_KEY;
 
-const POPULAR_ASSET_IDS: string[] = ["BTC", "ETH", "XRP"];
+const POPULAR_ASSET_IDS: string[] = ["BTC", "ETH", "MKR"];
 
 const popularratates = async (req: VercelRequest, res: VercelResponse) => {
   const reqArr = POPULAR_ASSET_IDS.map((assetId) =>
-    axios.get(`/v1/exchangerate/${assetId}/USD`)
+    axios.get(`/products/${assetId}-USD/stats`)
   );
   const respArr = await axios.all(reqArr);
   const respRes = respArr.map((a) => a.data);
-  res.status(200).json(respRes);
+
+  const normalizedData = POPULAR_ASSET_IDS.map((assetId, i) => ({
+    asset_id_base: assetId,
+    rate: respRes[i].last,
+  }));
+
+  res.status(200).json(normalizedData);
 };
 
 export default allowCors(popularratates);

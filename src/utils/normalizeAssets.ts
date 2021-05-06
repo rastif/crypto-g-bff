@@ -1,4 +1,8 @@
-const normalizeAssets = (assets: { name: string; type_is_crypto: boolean }[]) =>
-  assets.filter((asset) => asset.name && asset.type_is_crypto);
+const normalizeAssets = (
+  assets: { id: string; name: string; details: { type: string } }[]
+) =>
+  assets
+    .filter(({ name, details }) => name && details.type === "crypto")
+    .map(({ id, name }) => ({ asset_id: id, name }));
 
 export default normalizeAssets;
